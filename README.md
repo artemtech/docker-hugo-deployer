@@ -1,6 +1,17 @@
 # docker-hugo-deployer
 Hugo deploy to your server using rsync
 
+## configs
+| environment name | value | default|
+|---|---|---|
+|`KIND`|`build` or `deploy`|`build`|
+|`DEPLOY_TYPE`|`local` or `ssh`|`local`|
+|`DEPLOY_DESTINATION`|`/var/www/html/`|`/var/www/html/`|
+|`DEPLOY_PORT`|`22`|`22`|
+|`SSH_KEY`|`base64 of your ssh key content`|none|
+
+if using `DEPLOY_TYPE=ssh`, set `DEPLOY_DESTINATION` to `username@host-target:/your/destination/path`
+
 ## usage in gitlab-ci
 ```
 stages:
@@ -27,7 +38,6 @@ go-to-production:
   when: manual
   variables:
     KIND: deploy
-    DEPLOY_PASS_KEY: $DEPLOY_PASS_KEY
     DEPLOY_TYPE: ssh
     SSH_KEY: $SSH_DEPLOY_KEY
   before_script:
