@@ -1,4 +1,8 @@
 # docker-hugo-deployer
+
+[![Docker Pulls](https://badgen.net/docker/pulls/trueosiris/godaddypy?icon=docker&label=pulls)](https://hub.docker.com/r/artemtech/hugo-deployer)
+[![Docker Image Size](https://badgen.net/docker/size/trueosiris/godaddypy?icon=docker&label=image%20size)](https://hub.docker.com/r/artemtech/hugo-deployer)  
+
 Hugo deploy to your server using rsync
 
 ## configs
